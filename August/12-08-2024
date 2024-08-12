@@ -1,0 +1,16 @@
+class Solution {
+  public:
+    int SumofMiddleElements(vector<int> &arr1, vector<int> &arr2) {
+        int n = arr1.size();
+        vector<int> merged(n * 2);
+        
+        // Merge the two arrays
+        merge(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(), merged.begin());
+        
+        // Find the two middle elements and return their sum
+        int mid1 = merged[n - 1];
+        int mid2 = merged[n];
+        
+        return mid1 + mid2;
+    }
+};
