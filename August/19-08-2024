@@ -1,0 +1,19 @@
+class Solution {
+  public:
+    // arr : given array
+    // k : find kth smallest element and return using this function
+    int kthSmallest(vector<int> &a, int k) {
+        // code here
+        priority_queue<int> q;
+        for(auto i: a)
+        {
+            if(q.size() < k)    q.push(i);
+            else if(i < q.top())
+            {
+                q.pop();
+                q.push(i);
+            }
+        }
+        return q.top();
+    }
+};
