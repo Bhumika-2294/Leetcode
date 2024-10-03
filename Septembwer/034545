@@ -1,0 +1,14 @@
+from collections import Counter
+class Solution:
+    # Function to find the majority elements in the array
+    def findMajority(self, nums):
+        hash = Counter(nums)
+        req = len(nums) / 3
+        res = []
+        for key, val in hash.items():
+            if val > req:
+                res.append(key)
+        if not res:
+            return [-1]
+        return res
+        
