@@ -1,0 +1,12 @@
+class Solution {
+  public:
+    void reverseArray(vector<int> &arr) {
+        // code here
+        int i=0;
+        while(i<arr.size()/2)
+        {
+            swap(arr[i],arr[arr.size()-i-1]);
+            i++;
+        }
+    }
+};
